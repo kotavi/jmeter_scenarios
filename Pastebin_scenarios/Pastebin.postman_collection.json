@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "f0b3545b-c41a-458d-8cac-570ffa41fbd8",
+		"name": "Pastebin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create new paste",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_option",
+							"value": "paste",
+							"type": "text"
+						},
+						{
+							"key": "api_dev_key",
+							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"type": "text"
+						},
+						{
+							"key": "api_paste_code",
+							"value": "just some silly text",
+							"type": "text"
+						},
+						{
+							"key": "api_paste_name",
+							"value": "justmyfilename.php",
+							"type": "text"
+						},
+						{
+							"key": "api_paste_private",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "api_paste_expire_date",
+							"value": "1H",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pastebin.com/api/api_post.php",
+					"protocol": "https",
+					"host": [
+						"pastebin",
+						"com"
+					],
+					"path": [
+						"api",
+						"api_post.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting raw paste output of any 'public' & 'unlisted' pastes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_option",
+							"value": "paste",
+							"type": "text"
+						},
+						{
+							"key": "api_dev_key",
+							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"type": "text"
+						},
+						{
+							"key": "api_paste_code",
+							"value": "just some silly text",
+							"type": "text"
+						},
+						{
+							"key": "api_paste_name",
+							"value": "justmyfilename.php",
+							"type": "text"
+						},
+						{
+							"key": "api_paste_private",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "api_paste_expire_date",
+							"value": "1H",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pastebin.com/api/api_post.php",
+					"protocol": "https",
+					"host": [
+						"pastebin",
+						"com"
+					],
+					"path": [
+						"api",
+						"api_post.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting A Paste Created By A User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_option",
+							"value": "delete",
+							"type": "text"
+						},
+						{
+							"key": "api_dev_key",
+							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"type": "text"
+						},
+						{
+							"key": "api_user_key",
+							"value": "0ce59406cdd5e98536712d734fdf9c0d",
+							"type": "text"
+						},
+						{
+							"key": "api_paste_key",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pastebin.com/api/api_post.php",
+					"protocol": "https",
+					"host": [
+						"pastebin",
+						"com"
+					],
+					"path": [
+						"api",
+						"api_post.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list Pastes Created By A User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_option",
+							"value": "list",
+							"type": "text"
+						},
+						{
+							"key": "api_dev_key",
+							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"type": "text"
+						},
+						{
+							"key": "api_user_key",
+							"value": "0ce59406cdd5e98536712d734fdf9c0d",
+							"type": "text"
+						},
+						{
+							"key": "api_results_limit",
+							"value": "20",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pastebin.com/api/api_post.php",
+					"protocol": "https",
+					"host": [
+						"pastebin",
+						"com"
+					],
+					"path": [
+						"api",
+						"api_post.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting A Users Information And Settings",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_option",
+							"value": "userdetails",
+							"type": "text"
+						},
+						{
+							"key": "api_dev_key",
+							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"type": "text"
+						},
+						{
+							"key": "api_user_key",
+							"value": "0ce59406cdd5e98536712d734fdf9c0d",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pastebin.com/api/api_post.php",
+					"protocol": "https",
+					"host": [
+						"pastebin",
+						"com"
+					],
+					"path": [
+						"api",
+						"api_post.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creating An 'api_user_key' Using The API Member Login System",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_dev_key",
+							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"type": "text"
+						},
+						{
+							"key": "api_user_name",
+							"value": "testUuser",
+							"type": "text"
+						},
+						{
+							"key": "api_user_password",
+							"value": "5Ei5ef3rptuVwrL",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pastebin.com/api/api_login.php",
+					"protocol": "https",
+					"host": [
+						"pastebin",
+						"com"
+					],
+					"path": [
+						"api",
+						"api_login.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
