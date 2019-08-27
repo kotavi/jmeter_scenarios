@@ -47,10 +47,10 @@ $ jmeter
 
 ### How to install the JMeter plugins manager
 
--       Download the [Plugins Manager JAR file](https://jmeter-plugins.org/install/Install/)
--       Put the file in the lib/ext directory
--       Restart JMeter
--       Click “Options” and then “Plugins Manager”
+* Download the [Plugins Manager JAR file](https://jmeter-plugins.org/install/Install/)
+* Put the file in the lib/ext directory
+* Restart JMeter
+* Click “Options” and then “Plugins Manager”
 [^[How to Install the JMeter Plugins Manager](https://www.blazemeter.com/blog/how-install-jmeter-plugins-manager/)]
 
 ### Web sites where you can practice
