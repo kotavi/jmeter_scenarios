@@ -6,7 +6,83 @@
 	},
 	"item": [
 		{
-			"name": "create new paste",
+			"name": "1) Creating An 'api_user_key' Using The API Member Login System",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3ac3a178-7e99-4ffb-858c-68b67f964814",
+						"exec": [
+							"var jsonData = pm.response.text();",
+							"pm.environment.set(\"user_key\", jsonData);",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_dev_key",
+							"value": "{{dev_key}}",
+							"type": "text"
+						},
+						{
+							"key": "api_user_name",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "api_user_password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pastebin.com/api/api_login.php",
+					"protocol": "https",
+					"host": [
+						"pastebin",
+						"com"
+					],
+					"path": [
+						"api",
+						"api_login.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4) create new paste",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5e8c0248-bf3a-48c7-bf59-8a96ea5351ab",
+						"exec": [
+							"var jsonData = pm.response.text();",
+							"var temp = jsonData.replace(\"https://pastebin.com/\", \"\")",
+							"pm.environment.set(\"paste_id\", temp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -27,12 +103,12 @@
 						},
 						{
 							"key": "api_dev_key",
-							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"value": "{{dev_key}}",
 							"type": "text"
 						},
 						{
 							"key": "api_paste_code",
-							"value": "just some silly text",
+							"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet aliquam id diam maecenas. Ultricies tristique nulla aliquet enim tortor at auctor urna. Adipiscing bibendum est ultricies integer quis. Volutpat diam ut venenatis tellus in metus vulputate eu scelerisque. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Eu lobortis elementum nibh tellus molestie nunc non blandit massa. A cras semper auctor neque vitae tempus quam. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Ut pharetra sit amet aliquam id diam maecenas. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Quam quisque id diam vel quam elementum. Ipsum dolor sit amet consectetur adipiscing elit duis tristique. Aliquet lectus proin nibh nisl condimentum id venenatis. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien.\n\nPhasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Ligula ullamcorper malesuada proin libero. At quis risus sed vulputate odio ut. Dolor sit amet consectetur adipiscing elit ut aliquam purus. Aliquet risus feugiat in ante metus dictum. Donec massa sapien faucibus et molestie ac. Faucibus in ornare quam viverra orci sagittis eu. Sagittis aliquam malesuada bibendum arcu vitae elementum. Ultrices sagittis orci a scelerisque purus semper eget duis at. Aliquet sagittis id consectetur purus. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Varius sit amet mattis vulputate enim nulla aliquet. Tristique senectus et netus et malesuada fames ac. Dictum varius duis at consectetur lorem donec massa sapien. Ligula ullamcorper malesuada proin libero. Lectus mauris ultrices eros in cursus turpis.\n\nCursus in hac habitasse platea dictumst quisque sagittis purus sit. Sed tempus urna et pharetra pharetra massa massa. Sed cras ornare arcu dui. Dui vivamus arcu felis bibendum ut tristique et. Felis donec et odio pellentesque diam volutpat commodo sed. Pulvinar neque laoreet suspendisse interdum consectetur libero. Imperdiet proin fermentum leo vel orci porta non. Feugiat in fermentum posuere urna nec tincidunt praesent. Justo eget magna fermentum iaculis eu non diam phasellus vestibulum. Donec enim diam vulputate ut pharetra sit. Vitae nunc sed velit dignissim sodales ut eu sem integer.\n\nPlacerat in egestas erat imperdiet sed euismod nisi porta. Venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Sollicitudin ac orci phasellus egestas tellus rutrum tellus. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Turpis massa sed elementum tempus egestas sed. Vel facilisis volutpat est velit egestas dui id ornare. Pretium lectus quam id leo in vitae. Maecenas pharetra convallis posuere morbi. Ultrices eros in cursus turpis massa tincidunt dui ut.\n\nAmet venenatis urna cursus eget nunc scelerisque viverra mauris in. Iaculis urna id volutpat lacus laoreet non curabitur. Elit duis tristique sollicitudin nibh sit. Eu mi bibendum neque egestas. Consectetur lorem donec massa sapien faucibus et. Amet venenatis urna cursus eget nunc scelerisque viverra mauris in. Diam donec adipiscing tristique risus nec feugiat in fermentum. Sit amet commodo nulla facilisi. Sed augue lacus viverra vitae congue eu consequat ac. Sit amet mauris commodo quis. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Ipsum consequat nisl vel pretium lectus. Nunc pulvinar sapien et ligula ullamcorper. Imperdiet sed euismod nisi porta.\n\nArcu bibendum at varius vel pharetra. Sed cras ornare arcu dui vivamus arcu felis bibendum ut. Id cursus metus aliquam eleifend. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. In mollis nunc sed id semper risus in hendrerit gravida. Dolor purus non enim praesent elementum facilisis leo vel. Eget duis at tellus at urna condimentum mattis. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Nec feugiat in fermentum posuere urna nec. Nunc vel risus commodo viverra. Diam donec adipiscing tristique risus nec. Vitae tempus quam pellentesque nec nam aliquam sem et tortor. Risus viverra adipiscing at in tellus integer feugiat scelerisque. Dapibus ultrices in iaculis nunc sed augue lacus. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Massa placerat duis ultricies lacus. Enim sed faucibus turpis in eu. Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Aenean pharetra magna ac placerat vestibulum lectus mauris ultrices.\n\nOrnare arcu dui vivamus arcu. Dignissim cras tincidunt lobortis feugiat vivamus at augue. Nisl nunc mi ipsum faucibus vitae aliquet. Eget mauris pharetra et ultrices neque. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sit amet venenatis urna cursus eget nunc. Quis commodo odio aenean sed adipiscing. Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. Quis vel eros donec ac odio tempor orci dapibus. Lectus nulla at volutpat diam ut venenatis tellus. Diam quam nulla porttitor massa id neque aliquam vestibulum. Nunc vel risus commodo viverra maecenas accumsan. Sem fringilla ut morbi tincidunt augue. Placerat duis ultricies lacus sed turpis tincidunt id. Purus gravida quis blandit turpis cursus in hac habitasse. Dui sapien eget mi proin. Leo integer malesuada nunc vel. Morbi tristique senectus et netus et malesuada fames ac turpis. Massa vitae tortor condimentum lacinia quis vel.\n\nQuisque sagittis purus sit amet volutpat. Felis eget velit aliquet sagittis id. Eros donec ac odio tempor. Massa massa ultricies mi quis hendrerit dolor magna eget est. Vitae et leo duis ut diam. Nunc faucibus a pellentesque sit amet porttitor eget. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Tristique senectus et netus et. Vitae tempus quam pellentesque nec. Tortor consequat id porta nibh. Ultrices eros in cursus turpis massa tincidunt dui ut. Leo urna molestie at elementum eu facilisis sed odio morbi. Consectetur lorem donec massa sapien. Parturient montes nascetur ridiculus mus mauris.\n\nTempus egestas sed sed risus. A iaculis at erat pellentesque adipiscing commodo elit at imperdiet. Est velit egestas dui id ornare. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Morbi enim nunc faucibus a. Donec enim diam vulputate ut. Aliquet sagittis id consectetur purus ut. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Habitant morbi tristique senectus et. Ut venenatis tellus in metus vulputate eu scelerisque felis. Purus viverra accumsan in nisl nisi scelerisque. Feugiat nisl pretium fusce id velit ut.\n\nPurus non enim praesent elementum facilisis leo vel. Est ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Nisl condimentum id venenatis a condimentum vitae. Non sodales neque sodales ut etiam sit amet nisl. Aliquet enim tortor at auctor urna nunc id cursus metus. Eu non diam phasellus vestibulum lorem sed risus. Lectus proin nibh nisl condimentum. Tristique sollicitudin nibh sit amet commodo nulla facilisi. Augue eget arcu dictum varius duis at consectetur lorem. Nam aliquam sem et tortor consequat id. Quis commodo odio aenean sed adipiscing diam donec adipiscing. Ligula ullamcorper malesuada proin libero nunc. Justo donec enim diam vulputate ut. Tortor at auctor urna nunc id cursus metus aliquam eleifend. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Tellus mauris a diam maecenas sed enim. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Amet massa vitae tortor condimentum lacinia. Porta lorem mollis aliquam ut porttitor.",
 							"type": "text"
 						},
 						{
@@ -48,6 +124,11 @@
 						{
 							"key": "api_paste_expire_date",
 							"value": "1H",
+							"type": "text"
+						},
+						{
+							"key": "api_user_key",
+							"value": "{{user_key}}",
 							"type": "text"
 						}
 					]
@@ -75,8 +156,8 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
-						"type": "text"
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
 					}
 				],
 				"body": {
@@ -115,22 +196,34 @@
 					]
 				},
 				"url": {
-					"raw": "https://pastebin.com/api/api_post.php",
+					"raw": "https://pastebin.com/raw/34P2YxAw",
 					"protocol": "https",
 					"host": [
 						"pastebin",
 						"com"
 					],
 					"path": [
-						"api",
-						"api_post.php"
+						"raw",
+						"34P2YxAw"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Deleting A Paste Created By A User",
+			"name": "5) Deleting A Paste Created By A User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aa4f1845-a2d1-4329-ad08-49c16982a52a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -151,17 +244,17 @@
 						},
 						{
 							"key": "api_dev_key",
-							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"value": "{{dev_key}}",
 							"type": "text"
 						},
 						{
 							"key": "api_user_key",
-							"value": "0ce59406cdd5e98536712d734fdf9c0d",
+							"value": "{{user_key}}",
 							"type": "text"
 						},
 						{
 							"key": "api_paste_key",
-							"value": "",
+							"value": "{{paste_id}}",
 							"type": "text"
 						}
 					]
@@ -182,7 +275,7 @@
 			"response": []
 		},
 		{
-			"name": "list Pastes Created By A User",
+			"name": "3) list Pastes Created By A User",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -203,12 +296,12 @@
 						},
 						{
 							"key": "api_dev_key",
-							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"value": "{{dev_key}}",
 							"type": "text"
 						},
 						{
 							"key": "api_user_key",
-							"value": "0ce59406cdd5e98536712d734fdf9c0d",
+							"value": "{{user_key}}",
 							"type": "text"
 						},
 						{
@@ -234,7 +327,7 @@
 			"response": []
 		},
 		{
-			"name": "Getting A Users Information And Settings",
+			"name": "2) Getting A Users Information And Settings",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -255,12 +348,12 @@
 						},
 						{
 							"key": "api_dev_key",
-							"value": "717596e04fa28e0f938599bd2037ae3d",
+							"value": "{{dev_key}}",
 							"type": "text"
 						},
 						{
 							"key": "api_user_key",
-							"value": "0ce59406cdd5e98536712d734fdf9c0d",
+							"value": "{{user_key}}",
 							"type": "text"
 						}
 					]
@@ -275,53 +368,6 @@
 					"path": [
 						"api",
 						"api_post.php"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Creating An 'api_user_key' Using The API Member Login System",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/x-www-form-urlencoded"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "api_dev_key",
-							"value": "717596e04fa28e0f938599bd2037ae3d",
-							"type": "text"
-						},
-						{
-							"key": "api_user_name",
-							"value": "testUuser",
-							"type": "text"
-						},
-						{
-							"key": "api_user_password",
-							"value": "5Ei5ef3rptuVwrL",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://pastebin.com/api/api_login.php",
-					"protocol": "https",
-					"host": [
-						"pastebin",
-						"com"
-					],
-					"path": [
-						"api",
-						"api_login.php"
 					]
 				}
 			},
