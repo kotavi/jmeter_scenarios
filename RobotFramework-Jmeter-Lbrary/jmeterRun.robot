@@ -4,7 +4,7 @@ Library           Collections
 
 *** Variables ***
 ${JMeter_path}    /usr/local/bin/jmeter
-${JMeter_script_1thread1loop_path}    JMeter_test_files/jmeterTest1Thread1Loop.jmx
+${JMeter_script_1thread1loop_path}    jmeterTest1Thread1Loop.jmx
 ${JMeter_log01_path}    JMeter_test_files/jmeterTest1Thread1Loop_log01.jtl
 ${JMeter_log02_path}    JMeter_test_files/jmeterTest1Thread1Loop_log02.jtl
 ${JMeter_log03_path}    JMeter_test_files/jmeterTest1Thread1Loop_log03.jtl
