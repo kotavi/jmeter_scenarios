@@ -32,7 +32,7 @@ The Linux version of XAMPP is also known as LAMPP. I think you can guess what WA
 
 ## RobotFramework scenarios
 
-![] (Ride_ide.png)
+![](Ride_ide.png)
 
 
 
