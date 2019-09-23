@@ -1,54 +1,39 @@
-# Robot Framework JMeter Library
+# Integration of RobotFramework with Jmeter
 
-This library provides simple way to integrate Robot Framework and JMeter. JTL output
-files can be analysed and converted to HTML, Python dictionary or SQLite format.
+## Folder content 
 
-On 19th of March 2017, project has been moved at Github. 
+* JMeterClasses.py, JMeterLib.py - Robot Framework JMeter library 
+* jmeterRun.robot - set of Robot Framework test cases
+* LAMPP_JmeterTestPlan.jmx - Jmeter test plan with requests to LAMPP
+* proba.jmx - Jmeter test plan that executes simple GET request to www.google.com
 
-## License
-LGPL 3.0
 
-## Keyword documentation
-[JMeterLib.html](https://kowalpy.github.io/Robot-Framework-JMeter-Library/JMeterLib.html)
+## How to install Robot IDE (RIDE)
 
-## Version history
-Version 1.1 released on 25st of September 2015. What's new in 1.1:
 ```
-    Implementation of change request http://sourceforge.net/p/rf-jmeter-py/tickets/2/:
-    " As a End User I want to have option to create smaller reports"
+git clone https://github.com/robotframework/RIDE
+python setup.py build
+sudo python setup.py install
 ```
-Following software versions were used during development:
-- robotframework-2.8.7
-- robotframework-ride-2.7.5
-- JMeter 2.12
-- python-2.7.5
 
-Version 1.2 released on 29th of December 2017. What's new in 1.2:
+## Jmeter library
 
-- adapted to new csv log format
+https://github.com/kowalpy/Robot-Framework-JMeter-Library
 
-## Installation:
-- run command: pip install robotframework-jmeterlibrary
+## LAMPP
 
-OR
-- download, unzip and run command: python setup.py install
+See https://askubuntu.com/a/936552
 
-## Usage:
+AMPP stands for Apache, MariaDB, PHP and Perl. It's a slight variation of the common LAMP (Linux, Apache, MySQL, PHP) stack.
 
-Example for running JMeter and parsing results in single keyword:
-```
-    | run jmeter analyse jtl convert | D:/apache-jmeter-2.12/bin/jmeter.bat | D:/Tests/Test1Thread1Loop.jmx | D:/Tests/output1.jtl |
-``` 
-Example for running JMeter and parsing results in separate keyword:
-```
-    | ${logPath}=         | set variable                         | D:/Tests/output1.jtl          |            |
-    | run jmeter          | D:/apache-jmeter-2.12/bin/jmeter.bat | D:/Tests/Test1Thread1Loop.jmx | ${logPath} |
-    | analyse jtl convert | ${logPath}                           |                               |            |
-```
-Example for reading parsed contents:
-```
-    | ${result} | analyse jtl convert | ${logPath} |           |
-    | log       | ${result}           |            |           |
-    | : FOR     | ${ELEMENT}          | IN         | @{result} |
-    |           | log dictionary      | ${ELEMENT} |           |
-```
+XAMPP is a suite of software that is available for Linux, Windows and macOS. The "X" is a generic placeholder for the platform.
+
+The Linux version of XAMPP is also known as LAMPP. I think you can guess what WAMPP and MAMPP are, as well.
+
+## RobotFramework scenarios
+
+![] (Ride_ide.png)
+
+
+
+
