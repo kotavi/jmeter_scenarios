@@ -10,7 +10,8 @@
 	    2. [Install Jmeter](#jmeter_install)
 	    3. [Launch Jmeter](#jmeter_launch)
 3. [How to install the JMeter plugins manager](#plugins_manager)
-4. [Web sites where you can practice](#practice)
+4. [Run Jmeter from CLI](#jmeter_cli)
+5. [Web sites where you can practice](#practice)
 	1. [api.jmeter.ninja](#jmeter_ninja)
 	2. [Blazedemo](#Blazedemo)
 	3. [Other web sites](#other)
@@ -69,6 +70,11 @@ $ jmeter
 * Click “Options” and then “Plugins Manager”
 [^[How to Install the JMeter Plugins Manager](https://www.blazemeter.com/blog/how-install-jmeter-plugins-manager/)]
 
+### Run Jmeter from CLI <a name="jmeter_cli"></a>
+
+`jmeter  -n -t <test_plan_name> -l results.jtl -e -o <path_where_html_will_be_saved>`
+`jmeter  -n -t landonhotel.jmx -l results_.jtl -e -o html_report`
+
 ### Web sites where you can practice <a name="practice"></a>
 
 #### api.jmeter.ninja <a name="jmeter_ninja"></a>
@@ -95,3 +101,10 @@ http://computer-database.gatling.io/computers?p=1
 https://www.techbeamers.com/websites-to-practice-selenium-webdriver-online/#1httpsphptravelscomdemo
 ```
 
+### Notes
+- it's not recommended to add listeners for large tests, because displaying output live during load test can use a lot of system resources
+- it's better to graph the data after the tests is finished
+- to add some element of randomness to the test, so that it appears more human, you can add timer, for example, Gaussian Random Timer with Deviation 500 and Delay offset 1000 - meaning that before every user's action there will be a pause f 0.5-1.5 seconds
+- issues with RAM or CPU power for JMeter can be resolved by running a load test from the Command Line Interface
+- all listeners are ignored while running Jmeter in CLI mode
+-  .jtl files can be transposed to .xlsx, .cvs

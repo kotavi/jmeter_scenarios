@@ -3,3 +3,6 @@
 */*.rtf
 .pyc
 .idea/
+*.jtl
+*.log
+html_report/
