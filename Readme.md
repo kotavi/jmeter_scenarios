@@ -73,6 +73,7 @@ $ jmeter
 ### Run Jmeter from CLI <a name="jmeter_cli"></a>
 
 `jmeter  -n -t <test_plan_name> -l results.jtl -e -o <path_where_html_will_be_saved>`
+
 `jmeter  -n -t landonhotel.jmx -l results_.jtl -e -o html_report`
 
 ### Web sites where you can practice <a name="practice"></a>
